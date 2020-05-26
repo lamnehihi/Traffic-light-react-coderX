@@ -1,0 +1,28 @@
+.light {
+  display: flex;
+  flex-direction: column;
+}
+
+.bulb {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin: 1rem 0rem;
+  opacity: .2;
+}
+
+.active {
+  opacity: 1;
+}
+
+.red {
+  background-color: red;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.green {
+  background-color: green;
+}

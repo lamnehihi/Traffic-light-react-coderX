@@ -1,26 +1,27 @@
-import React from 'react';
+import React, { Component } from "react";
 import logo from './logo.svg';
 import './App.css';
+import TrafficLight from './components/TrafficLight';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const RED = 0;
+const ORANGE = 1;
+const GREEN = 2;
+class App extends Component {
+  // constructor() {
+  //   super();
+  //   this.todoItems = [
+  //     { title: "Go to market", isComplete: true },
+  //     { title: "Buy food" , isComplete: true},
+  //     { title: "Make dinner" },
+  //   ];
+  // }
+  render() {
+    return (
+      <div className="App">
+        <TrafficLight />;
+      </div>
+    );
+  }
 }
 
 export default App;
