@@ -7,34 +7,8 @@ const ORANGE = 1;
 const GREEN = 2;
 
 class TrafficLight extends Component {
-  constructor() {
-    super();
-    this.state = {
-      currentColor : RED,
-    }
-
-    setInterval(() => {
-      this.setState({
-        currentColor : this.nextColor(this.state.currentColor),
-      }) 
-      console.log(this.state.currentColor);
-    }, 1000)
-  }
-
-  nextColor(color) {
-    // eslint-disable-next-line default-case
-    switch (color) {
-      case RED:
-        return ORANGE;
-      case ORANGE:
-        return GREEN;
-      case GREEN:
-        return RED;
-    }
-  }
-
   render() {
-    const { currentColor } = this.state;
+    const currentColor = this.props.currentColor;
     return (
       <div className="light">
         <div className={classNames("bulb red", {

@@ -7,18 +7,34 @@ const RED = 0;
 const ORANGE = 1;
 const GREEN = 2;
 class App extends Component {
-  // constructor() {
-  //   super();
-  //   this.todoItems = [
-  //     { title: "Go to market", isComplete: true },
-  //     { title: "Buy food" , isComplete: true},
-  //     { title: "Make dinner" },
-  //   ];
-  // }
+  constructor() {
+    super();
+    this.state = {
+      currentColor : RED,
+    }
+
+    setInterval(() => {
+      this.setState({
+        currentColor : this.nextColor(this.state.currentColor),
+      }) 
+    }, 1000)
+  }
+  nextColor(color) {
+    // eslint-disable-next-line default-case
+    switch (color) {
+      case RED:
+        return ORANGE;
+      case ORANGE:
+        return GREEN;
+      case GREEN:
+        return RED;
+    }
+  }
   render() {
+    const { currentColor } = this.state;
     return (
       <div className="App">
-        <TrafficLight />;
+        <TrafficLight currentColor={currentColor}/>;
       </div>
     );
   }
